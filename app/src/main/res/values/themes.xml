@@ -8,5 +8,22 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="title_onboard" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">@font/geometr415</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="detail_onboard" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#7D848D</item>
+        <item name="android:fontFamily">@font/gill_sans_mt</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
     <style name="Theme.TrivKu" parent="Base.Theme.TrivKu" />
 </resources>

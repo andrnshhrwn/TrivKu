@@ -12,6 +12,7 @@ class OnboardOne : AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         enableEdgeToEdge()
         setContentView(R.layout.activity_onboard_one)
+
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
 //            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
