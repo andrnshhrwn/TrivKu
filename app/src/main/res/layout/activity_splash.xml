@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     app:layoutDescription="@xml/activity_main_scene"
     android:theme="@style/Theme.TrivKu"
-    tools:context=".MainActivity">
+    tools:context=".Splash">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/backgroundLayout"
