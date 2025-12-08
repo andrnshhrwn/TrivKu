@@ -2,19 +2,17 @@ package com.pab.trivku
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class Splash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_splash)
 
         val motionLayout = findViewById<MotionLayout>(R.id.motionLayout)
 
@@ -31,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             ) {}
 
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
-                startActivity(Intent(this@MainActivity, MainActivity2::class.java))
+                startActivity(Intent(this@Splash, OnboardOne::class.java))
                 finish()
             }
 
