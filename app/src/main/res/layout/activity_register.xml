@@ -108,6 +108,7 @@
 
         <!-- BUTTON SIGN UP -->
         <Button
+            style="@style/reglogButton"
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="56dp"

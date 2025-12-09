@@ -17,21 +17,21 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)   // pastikan nama file XML adalah register.xml
 
         // ====== FIND VIEW ======
-        val btnBack = findViewById<ImageView>(R.id.btnBack)
         val inputNama = findViewById<EditText>(R.id.inputNama)
         val inputEmail = findViewById<EditText>(R.id.inputEmail)
         val inputPassword = findViewById<EditText>(R.id.inputPassword)
-        val btnShowPassword = findViewById<ImageView>(R.id.btnShowPassword)
         val btnRegister = findViewById<Button>(R.id.btnRegister)
         val tvLogin = findViewById<TextView>(R.id.tvLogin)
 
 
         // ====== BUTTON BACK ======
+        val btnBack = findViewById<ImageView>(R.id.btnBack)
         btnBack.setOnClickListener {
             finish()
         }
 
         // ====== SHOW/HIDE PASSWORD ======
+        val btnShowPassword = findViewById<ImageView>(R.id.btnShowPassword)
         btnShowPassword.setOnClickListener {
             isPasswordVisible = !isPasswordVisible
 
