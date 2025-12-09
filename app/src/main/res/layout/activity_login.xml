@@ -75,7 +75,7 @@
                 android:textSize="15sp"
                 android:fontFamily="sans-serif"
                 android:textStyle="normal"
-                android:inputType="text" />
+                android:inputType="textPassword" />
 
             <ImageView
                 android:id="@+id/btnShowPassword"
@@ -101,6 +101,7 @@
 
         <!-- SIGN IN BUTTON -->
         <Button
+            style="@style/reglogButton"
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="56dp"
