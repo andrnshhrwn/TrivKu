@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrivKu">
         <activity
+            android:name=".OnboardThree"
+            android:exported="false" />
+        <activity
+            android:name=".OnboardTwo"
+            android:exported="true" />
+        <activity
             android:name=".OnboardOne"
             android:exported="true" />
         <activity
