@@ -3,6 +3,7 @@ package com.pab.trivku
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
@@ -48,5 +49,9 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
 
+        val login = findViewById<Button>(R.id.btnLogin)
+        login.setOnClickListener {
+            startActivity(Intent(this, Home::class.java))
+        }
     }
 }

@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrivKu">
         <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
             android:name=".OnboardThree"
             android:exported="false" />
         <activity
