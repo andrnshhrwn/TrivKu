@@ -69,5 +69,10 @@
         <item name="cornerSizeBottomRight">30dp</item>
     </style>
 
+    <style name="RoundedCornersImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
     <style name="Theme.TrivKu" parent="Base.Theme.TrivKu" />
 </resources>
