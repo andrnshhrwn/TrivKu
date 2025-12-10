@@ -3,21 +3,23 @@ package com.pab.trivku
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 
-class OnboardOne : AppCompatActivity() {
+class OnboardTwo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         enableEdgeToEdge()
-        setContentView(R.layout.activity_onboard_one)
+        setContentView(R.layout.activity_onboard_two)
 
-        val btnGetStarted = findViewById<Button>(R.id.getStarted)
+        // Pindah Activity
+        val btnNext = findViewById<Button>(R.id.ob2_next)
 
-        btnGetStarted.setOnClickListener {
-            startActivity(Intent(this, OnboardTwo::class.java))
+        btnNext.setOnClickListener {
+            startActivity(Intent(this, OnboardThree::class.java))
         }
     }
 }

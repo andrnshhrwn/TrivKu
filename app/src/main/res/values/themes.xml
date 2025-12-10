@@ -3,9 +3,19 @@
     <style name="Base.Theme.TrivKu" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- warna status bar transparan -->
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- warna icon -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+
+    <style name="splash">
+        <item name="android:statusBarColor">@color/blue</item>
     </style>
 
     <style name="title_onboard" parent="Widget.MaterialComponents.TextView">
