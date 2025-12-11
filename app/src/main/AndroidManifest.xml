@@ -13,23 +13,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrivKu">
         <activity
-            android:name=".Home"
-            android:exported="false" />
+            android:name=".MainActivity"
+            android:exported="true" />
         <activity
             android:name=".OnboardThree"
             android:exported="false" />
         <activity
             android:name=".OnboardTwo"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".OnboardOne"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Splash"
             android:exported="true">

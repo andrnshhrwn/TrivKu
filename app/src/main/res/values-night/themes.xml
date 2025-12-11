@@ -1,8 +1,86 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.TrivKu" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/blue</item>  <!-- optional -->
+        <item name="enableEdgeToEdge">false</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">true</item>
     </style>
 
+    <style name="splash">
+        <item name="android:statusBarColor">@color/blue</item>
+    </style>
+
+    <style name="title_onboard" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/dark_text</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">@font/geometr415</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginHorizontal">24dp</item>
+    </style>
+
+    <style name="detail_onboard" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/light_text</item>
+        <item name="android:fontFamily">@font/gill_sans_mt</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginHorizontal">24dp</item>
+    </style>
+
+    <style name="ob_button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="backgroundTint">@color/blue</item>
+        <item name="android:layout_marginHorizontal">16dp</item>
+        <item name="android:layout_marginBottom">72dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/gill_sans_mt</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:background">@drawable/custom_button_radius</item>
+    </style>
+
+    <style name="reglogButton" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="backgroundTint">@color/blue</item>
+        <item name="android:layout_marginHorizontal">6dp</item>
+        <item name="android:layout_marginBottom">72dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/gill_sans_mt</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:background">@drawable/custom_button_radius</item>
+    </style>
+
+    <style name="BottomRadiusImage">
+        <item name="cornerFamily">rounded</item>
+
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeBottomLeft">30dp</item>
+        <item name="cornerSizeBottomRight">30dp</item>
+    </style>
+
+    <style name="RoundedCornersImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <style name="NoIndicatorNavigation" parent="@style/Widget.Material3.BottomNavigationView">
+        <item name="itemActiveIndicatorStyle">@style/TransparentIndicator</item>
+    </style>
+
+    <style name="TransparentIndicator">
+        <item name="android:color">@android:color/transparent</item>
+        <item name="android:shape">@null</item>
+    </style>
+
+    <style name="Theme.TrivKu" parent="Base.Theme.TrivKu" />
 </resources>
