@@ -120,6 +120,7 @@
                     app:cardElevation="4dp">
 
                     <LinearLayout
+                        android:id="@+id/ifdetail"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
@@ -139,6 +140,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/sf_ui_display_semibold"
+                            android:textColor="@color/black"
                             android:text="Telaga Nilem"
                             android:textSize="18sp" />
 

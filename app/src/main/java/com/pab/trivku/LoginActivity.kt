@@ -39,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         // ====== BUTTON BACK ======
-        val btnBack = findViewById<ImageView>(R.id.btnBack)
+        val btnBack = findViewById<TextView>(R.id.btnBack)
         btnBack.setOnClickListener {
             finish()
         }
