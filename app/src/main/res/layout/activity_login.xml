@@ -11,14 +11,13 @@
         android:orientation="vertical">
 
         <!-- Back Button -->
-        <ImageView
+
+        <TextView
             android:id="@+id/btnBack"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:padding="10dp"
-            android:src="@drawable/ic_back"
-            android:background="@drawable/bg_circle_light"
-            android:layout_marginBottom="28dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/back_btn"
+            android:layout_marginBottom="28dp"/>
 
         <!-- Title -->
         <TextView

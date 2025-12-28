@@ -1,13 +1,14 @@
 package com.pab.trivku
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.pab.trivku.databinding.ActivityMainBinding
+import com.pab.trivku.ui.home.HomeFragment
+import com.pab.trivku.ui.profile.ProfileFragment
+import com.pab.trivku.ui.favorite.FavoriteFragment
+import com.pab.trivku.ui.search.SearchFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,9 +27,8 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> { loadFragment(HomeFragment()); true }
-                R.id.best -> { loadFragment(BestFragment()); true }
                 R.id.search -> { loadFragment(SearchFragment()); true }
-                R.id.save -> { loadFragment(SaveFragment()); true }
+                R.id.favorite -> { loadFragment(FavoriteFragment()); true }
                 R.id.profile -> { loadFragment(ProfileFragment()); true }
                 else -> false
             }

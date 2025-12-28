@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrivKu">
         <activity
+            android:name=".ResetPassword"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPassword"
+            android:exported="true" />
+        <activity
+            android:name=".DetailKonten"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
