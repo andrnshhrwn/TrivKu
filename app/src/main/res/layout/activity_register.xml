@@ -40,12 +40,12 @@
 
         <!-- NAMA LENGKAP -->
         <EditText
-            android:id="@+id/inputNama"
+            android:id="@+id/inputUsername"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:background="@drawable/bg_input_field"
             android:padding="16dp"
-            android:hint="Nama lengkap"
+            android:hint="Username"
             android:textColorHint="#9E9E9E"
             android:textColor="#000000"
             android:textSize="15sp"

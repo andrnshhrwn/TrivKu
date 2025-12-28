@@ -6,6 +6,12 @@ import android.text.InputType
 import android.widget.*
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.pab.trivku.data.AuthRepository
+import com.pab.trivku.data.local.AppDatabase
+import com.pab.trivku.data.pref.SessionManager
+import com.pab.trivku.viewmodel.AuthViewModel
+import com.pab.trivku.viewmodel.AuthViewModelFactory
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -16,8 +22,30 @@ class RegisterActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_register)   // pastikan nama file XML adalah register.xml
 
+        // Inisialisasi Database dan Repository
+        val dao = AppDatabase.getDatabase(applicationContext).userDao()
+        val repository = AuthRepository(dao)
+        val sessionManager = SessionManager(this)
+
+        val factory = AuthViewModelFactory(repository, sessionManager)
+        val authViewModel = ViewModelProvider(this, factory).get(AuthViewModel::class.java)
+
+        authViewModel.registStatus.observe(this) { status ->
+            when (status) {
+                "Registrasi Berhasil" -> {
+                    Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    finish()
+                }
+                else -> {
+                    // error message
+                    Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
         // ====== FIND VIEW ======
-        val inputNama = findViewById<EditText>(R.id.inputNama)
+        val inputUsername = findViewById<EditText>(R.id.inputUsername)
         val inputEmail = findViewById<EditText>(R.id.inputEmail)
         val inputPassword = findViewById<EditText>(R.id.inputPassword)
         val btnRegister = findViewById<Button>(R.id.btnRegister)
@@ -48,17 +76,16 @@ class RegisterActivity : AppCompatActivity() {
             inputPassword.setSelection(inputPassword.text.length)
         }
 
-
         // ====== BUTTON REGISTER ======
         btnRegister.setOnClickListener {
 
-            val nama = inputNama.text.toString().trim()
+            val username = inputUsername.text.toString().trim()
             val email = inputEmail.text.toString().trim()
             val password = inputPassword.text.toString().trim()
 
             // Validasi
-            if (nama.isEmpty()) {
-                inputNama.error = "Nama tidak boleh kosong"
+            if (username.isEmpty()) {
+                inputUsername.error = "Nama tidak boleh kosong"
                 return@setOnClickListener
             }
 
@@ -77,11 +104,7 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            Toast.makeText(this, "Registrasi berhasil!", Toast.LENGTH_SHORT).show()
-
-            // Setelah sukses, pindah ke Login
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
+            authViewModel.register(username, email, password)
         }
 
 

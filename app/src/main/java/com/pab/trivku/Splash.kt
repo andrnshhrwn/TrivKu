@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.pab.trivku.data.pref.SessionManager
 
 class Splash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,28 +15,30 @@ class Splash : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_splash)
 
+        // Inisialisasi SessionManager
+        val sessionManager = SessionManager(this)
+
         val motionLayout = findViewById<MotionLayout>(R.id.motionLayout)
 
-        // Jalankan animasi setelah layout benar-benar siap
         motionLayout.post {
             motionLayout.transitionToEnd()
         }
 
         motionLayout.setTransitionListener(object : MotionLayout.TransitionListener {
             override fun onTransitionStarted(motionLayout: MotionLayout?, startId: Int, endId: Int) {}
-
-            override fun onTransitionChange(
-                motionLayout: MotionLayout?, startId: Int, endId: Int, progress: Float
-            ) {}
+            override fun onTransitionChange(motionLayout: MotionLayout?, startId: Int, endId: Int, progress: Float) {}
 
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
-                startActivity(Intent(this@Splash, OnboardOne::class.java))
+                if (sessionManager.isLoggedIn()) {
+                    val intent = Intent(this@Splash, MainActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    startActivity(Intent(this@Splash, OnboardOne::class.java))
+                }
                 finish()
             }
 
-            override fun onTransitionTrigger(
-                motionLayout: MotionLayout?, triggerId: Int, positive: Boolean, progress: Float
-            ) {}
+            override fun onTransitionTrigger(motionLayout: MotionLayout?, triggerId: Int, positive: Boolean, progress: Float) {}
         })
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.motionLayout)) { v, insets ->

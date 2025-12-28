@@ -7,8 +7,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.enableEdgeToEdge
+import androidx.lifecycle.ViewModelProvider
+import com.pab.trivku.data.AuthRepository
+import com.pab.trivku.data.local.AppDatabase
+import com.pab.trivku.data.pref.SessionManager
+import com.pab.trivku.viewmodel.AuthViewModel
+import com.pab.trivku.viewmodel.AuthViewModelFactory
 
 class LoginActivity : AppCompatActivity() {
 
@@ -19,8 +26,42 @@ class LoginActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
-        // visiblePassword
+        // Inisialisasi Database dan Repository
+        val dao = AppDatabase.getDatabase(applicationContext).userDao()
+        val repository = AuthRepository(dao)
+        val sessionManager = SessionManager(this)
+
+        val factory = AuthViewModelFactory(repository, sessionManager)
+        val authViewModel = ViewModelProvider(this, factory).get(AuthViewModel::class.java)
+
+        authViewModel.loginStatus.observe(this) { status ->
+            when (status) {
+                "Berhasil" -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                }
+                else -> {
+                    // error message
+                    Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+        val inputEmail = findViewById<EditText>(R.id.inputEmail)
         val inputPassword = findViewById<EditText>(R.id.etPassword)
+        val btnLogin = findViewById<Button>(R.id.btnLogin)
+        btnLogin.setOnClickListener {
+            val email = inputEmail.text.toString().trim()
+            val pass = inputPassword.text.toString().trim()
+            if (email.isNotEmpty() && pass.isNotEmpty()) {
+                // Panggil fungsi login
+                authViewModel.login(email, pass)
+            } else {
+                Toast.makeText(this, "Isi semua kolom!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // visiblePassword
         val showPassword = findViewById<ImageView>(R.id.btnShowPassword)
         showPassword.setOnClickListener {
             isPasswordVisible = !isPasswordVisible
@@ -49,9 +90,9 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
 
-        val login = findViewById<Button>(R.id.btnLogin)
-        login.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+        val tvForget = findViewById<TextView>(R.id.tvForgotPassword)
+        tvForget.setOnClickListener {
+            startActivity(Intent(this, ForgotPassword::class.java))
         }
     }
 }
