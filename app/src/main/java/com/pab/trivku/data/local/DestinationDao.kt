@@ -13,6 +13,9 @@ interface DestinationDao {
     @Query("SELECT * FROM destinations ORDER BY id ASC")
     fun getAllDestinations(): LiveData<List<Destination>>
 
+    @Query("SELECT * FROM destinations WHERE category = :category")
+    fun getDestinationsByCategory(category: String): LiveData<List<Destination>>
+
     @Query("SELECT * FROM destinations WHERE name LIKE :searchQuery OR location LIKE :searchQuery")
     fun searchDestinations(searchQuery: String): LiveData<List<Destination>>
 

@@ -9,6 +9,10 @@ class DestinationRepository(private val destinationDao: DestinationDao) {
 
     fun getDestinationsFromDb() = destinationDao.getAllDestinations()
 
+    fun getDestinationsByCategory(category: String): LiveData<List<Destination>> {
+        return destinationDao.getDestinationsByCategory(category)
+    }
+
     fun searchDestinations(query: String): LiveData<List<Destination>> {
         return destinationDao.searchDestinations(query)
     }

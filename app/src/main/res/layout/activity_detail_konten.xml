@@ -37,6 +37,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/g_55"
         app:shapeAppearanceOverlay="@style/bg_rounded_top">
@@ -77,6 +78,15 @@
                     android:text="place"
                     android:textColor="@color/light_text"
                     android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Price"
+                    android:textColor="@color/blue"
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/tvDetailsTitleDestination"

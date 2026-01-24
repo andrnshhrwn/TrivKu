@@ -55,7 +55,6 @@ class ForgotPassword : AppCompatActivity() {
             }
         }
 
-        // ===== Kirim Link Reset =====
         btnSend.setOnClickListener {
             val email = inputEmail.text.toString().trim()
 
