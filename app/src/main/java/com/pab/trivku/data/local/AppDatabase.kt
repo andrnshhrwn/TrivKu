@@ -65,60 +65,80 @@ abstract class AppDatabase : RoomDatabase() {
                     name = "Telaga Nilem",
                     location = "Pasawahan",
                     imageResource = R.drawable.telaga_nilem,
+                    category = "Alam",
+                    price = 15000,
                     describe = "Telaga Nilem punya air sebening kaca yang menenangkan. Bahkan pengunjung bisa melihat ikan berenang dari atas permukaan. Kedalamannya bervariasi dan cocok untuk berenang santai. Suasana sekitar telaga dikelilingi pepohonan rindang. Tempat ini sangat cocok untuk healing dan foto-foto cantik. Tempat ini masuk dalam daftar wisata kuningan untuk healing yang populer."
                 ),
                 Destination(
                     name = "Telaga Cicerem",
                     location = "Kaduela",
                     imageResource = R.drawable.telaga_cicerem,
+                    category = "Alam",
+                    price = 15000,
                     describe = "Telaga Cicerem dikenal juga sebagai Telaga Biru karena warna airnya. Airnya sangat jernih, sampai-sampai dasar telaga terlihat jelas. Ikan warna-warni berenang bebas dan jadi daya tarik utama. Ada spot ayunan pohon di atas air yang jadi favorit wisatawan. Pemandangannya indah dan sangat cocok untuk healing. Tempat ini sering viral sebagai wisata kuningan terbaru yang Instagramable."
                 ),
                 Destination(
                     name = "Telaga Remis",
                     location = "Kaduela",
                     imageResource = R.drawable.telaga_remis,
+                    category = "Alam",
+                    price = 20000,
                     describe = "Telaga Remis berada di lereng Gunung Ciremai dengan luas sekitar 3,3 hektar. Nama remis diambil dari sejenis kerang kuning yang hidup di sini. Suasana di sekitarnya sangat tenang dan rindang. Udaranya sejuk, cocok untuk piknik dan lepas penat. Tempat ini juga jadi spot favorit untuk wisata keluarga. Salah satu wisata alam kuningan yang cocok untuk rehat dari hiruk pikuk kota."
                 ),
                 Destination(
                     name = "Cibulan",
                     location = "Maniskidul",
                     imageResource = R.drawable.cibulan,
+                    category = "Alam",
+                    price = 30000,
                     describe = "Cibulan dikenal sebagai tempat wisata kuningan tertua yang masih ramai dikunjungi. Kolam alaminya dihuni ikan dewa, endemik khas daerah ini. Konon, ikan ini adalah jelmaan prajurit Prabu Siliwangi. Wisatawan bisa berenang bersama ikan jinak tersebut di kolam utama. Di sisi kolam, terdapat tujuh mata air yang dikenal sakral. Suasananya sejuk karena berada di kaki Gunung Ciremai."
                 ),
                 Destination(
                     name = "Wisata Cipaniis",
                     location = "Singkup",
                     imageResource = R.drawable.wisata_cipaniis,
+                    category = "Alam",
+                    price = 25000,
                     describe = "Wisata Cipaniis menyuguhkan sungai jernih dengan suasana alami. Airnya dipercaya bisa menyembuhkan penyakit kulit. Tempat ini juga digunakan sebagai bumi perkemahan dan irigasi warga. Pengunjung bisa berenang atau menjajal body rafting yang seru. Pepohonan pinus di sekitarnya membuat udara makin sejuk. Wisata Cipaniis berada di Desa Singkup, Kecamatan Pasawahan, Kuningan. Lokasinya mudah diakses dan cocok untuk wisata keluarga atau rombongan sekolah."
                 ),
                 Destination(
                     name = "Gedung Sjahrir",
                     location = "Cilimus",
                     imageResource = R.drawable.gedung_sjahrir,
+                    category = "Sejarah",
+                    price = 5000,
                     describe = "Gedung Sjahrir berada di kawasan Gedung Perundingan Linggarjati. Dulu, tempat ini digunakan delegasi Indonesia saat perundingan 1946. Sutan Sjahrir dan timnya menginap di gedung ini selama negosiasi. Bangunan bersejarah ini kini masih berdiri dengan baik. Gedung ini cocok dikunjungi untuk wisata edukasi sejarah sekaligus mengenang perjuangan kemerdekaan."
                 ),
                 Destination(
                     name = "Situs Lingga",
                     location = "Darma",
                     imageResource = R.drawable.situs_lingga,
+                    category = "Sejarah",
+                    price = 10000,
                     describe = "Situs ini terletak di Desa Sagarahiang dan dipercaya sudah ada sebelum masehi. Batu Lingga digunakan untuk melihat waktu oleh raja-raja terdahulu. Desa ini juga disebut sebagai desa tertua di Kuningan. Wisatawan bisa menjelajahi area situs yang masih terjaga. Lokasinya dikelilingi alam hijau dan udara pegunungan yang sejuk. Situs Lingga cocok dikunjungi bagi penyuka sejarah dan kepercayaan budaya lokal."
                 ),
                 Destination(
                     name = "Petilasan Prabu Siliwangi",
                     location = "Manis Kidul",
                     imageResource = R.drawable.petilasan_prabu_siliwangi,
+                    category = "Sejarah",
+                    price = 5000,
                     describe = "Di dalam kawasan Cibulan, ada situs tujuh sumur yang dipercaya sakral. Sumur ini diyakini muncul saat Prabu Siliwangi menghentakkan tongkatnya. Setiap sumur memiliki nama dan fungsi berbeda, seperti Sumur Kejayaan dan Sumur Pengabulan. Pengunjung biasanya datang untuk berdoa atau mengambil air sumur. Tempat ini cocok untuk wisata religi dan budaya. Petilasan ini berada di Desa Manis Kidul, tak jauh dari kolam Cibulan."
                 ),
                 Destination(
                     name = "Gedung Perundingan Linggarjati",
                     location = "Cilimus",
                     imageResource = R.drawable.gedung_perundingan_linggarjati,
+                    category = "Sejarah",
+                    price = 10000,
                     describe = "Gedung ini jadi saksi penting sejarah kemerdekaan Indonesia. Di sinilah Perundingan Linggarjati antara Indonesia dan Belanda digelar pada 1946. Terletak di kaki Gunung Ciremai, suasana sekitarnya sejuk dan tenang. Gedung ini masih berdiri kokoh dan terbuka untuk umum. Wisatawan bisa melihat langsung ruang perundingan dan artefak sejarah lainnya. Tempat ini cocok untuk wisata edukatif sambil menikmati keindahan alam sekitarnya."
                 ),
                 Destination(
                     name = "Museum Situs Purbakala Cipari",
                     location = "Cigugur",
                     imageResource = R.drawable.museum_situs_purbakala_cipari,
+                    category = "Sejarah",
+                    price = 15000,
                     describe = "Museum ini menampilkan peninggalan zaman megalitikum yang ditemukan sejak 1972. Koleksinya beragam, seperti menhir, kapak batu, hingga gerabah purba. Lokasinya tidak jauh dari pusat kota Kuningan. Suasana di sekitar museum pun asri dan cocok untuk belajar sejarah. Banyak pelajar dan peneliti berkunjung ke sini untuk mengenal kehidupan masa lampau. Museum Situs Purbakala Cipari jadi salah satu destinasi wisata kuningan yang edukatif dan tak membosankan."
                 )
             )

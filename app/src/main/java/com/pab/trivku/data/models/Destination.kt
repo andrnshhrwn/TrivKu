@@ -14,5 +14,7 @@ data class Destination(
     val location: String,
     val imageResource: Int,
     val describe: String,
-    var isFavorite: Boolean = false
+    var isFavorite: Boolean = false,
+    val category: String = "Lainnya",
+    val price: Long
 ): Parcelable

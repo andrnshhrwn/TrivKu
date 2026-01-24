@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.tabs.TabLayout
 import com.pab.trivku.LoginActivity
 import com.pab.trivku.R
 import com.pab.trivku.data.DestinationRepository
@@ -42,6 +43,7 @@ class HomeFragment : Fragment() {
         setupHeader(view)
         setupViewModel()
         setupRecyclerView(view)
+        setupTabLayout(view)
         observeData()
     }
 
@@ -114,8 +116,38 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun setupTabLayout(view: View) {
+        val tabLayout = view.findViewById<TabLayout>(R.id.tabFilters)
+
+        val categories = listOf("Semua", "Alam", "Sejarah")
+
+        tabLayout.removeAllTabs()
+
+        for (category in categories) {
+            tabLayout.addTab(tabLayout.newTab().setText(category))
+            val tabs = tabLayout.getChildAt(0) as ViewGroup
+            for (i in 0 until tabs.childCount) {
+                val tabView = tabs.getChildAt(i)
+                val p = tabView.layoutParams as ViewGroup.MarginLayoutParams
+                p.setMargins(0, 0, 16, 0)
+                tabView.requestLayout()
+            }
+        }
+
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                tab?.text?.let { categoryName ->
+                    viewModel.setCategory(categoryName.toString())
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
+        })
+    }
+
     private fun observeData() {
-        viewModel.allDestinations.observe(viewLifecycleOwner) { destinations ->
+        viewModel.filteredDestinations.observe(viewLifecycleOwner) { destinations ->
             destinations?.let {
                 adapter.updateList(it)
             }

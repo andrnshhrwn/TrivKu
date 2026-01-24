@@ -14,6 +14,8 @@ class DestinationsViewModel(private val repository: DestinationRepository) : Vie
     // Trigger manual
     private val refreshTrigger = MutableLiveData<Boolean>()
 
+    private val _currentCategory = MutableLiveData<String>("Semua")
+
     init {
         // Trigger pertama kali agar data muncul saat aplikasi dibuka
         triggerRefresh()
@@ -30,5 +32,20 @@ class DestinationsViewModel(private val repository: DestinationRepository) : Vie
 
     fun searchDestinations(query: String): LiveData<List<Destination>> {
         return repository.searchDestinations(query)
+    }
+
+    val filteredDestinations: LiveData<List<Destination>> = _currentCategory.switchMap { category ->
+        if (category == "Semua") {
+            repository.getDestinationsFromDb()
+        } else {
+            repository.getDestinationsByCategory(category)
+        }
+    }
+
+    // Fungsi untuk mengubah kategori saat Tab diklik
+    fun setCategory(category: String) {
+        if (_currentCategory.value != category) {
+            _currentCategory.value = category
+        }
     }
 }
